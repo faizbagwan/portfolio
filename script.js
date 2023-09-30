@@ -1,3 +1,50 @@
+document.addEventListener("mousemove",function(dets){
+gsap.to(".ball",{
+    left:dets.x,
+    top:dets.y
+})
+})
+function loadinganimation() {
+    gsap.from(".home-content h1,.text-animate h3", {
+      y: 100,
+      opacity: 0,
+      delay: 0.2,
+      duration: 0.9,
+      stagger: 0.3,
+    });
+    gsap.from(".home-content p,.home-content .btn-box,.home-sci", {
+      scale: 0.9,
+      opacity: 0,
+      delay: 1.3,
+      duration: 0.5,
+    });
+
+  }
+  loadinganimation();
+
+
+  function education() {
+    var a = document.querySelector(".education");
+    // var b = document.querySelector("#play");
+    a.addEventListener("mouseover", function () {
+        gsap.from(".gh", {
+            x: -100,
+            opacity: 0,
+            delay: 1.3,
+            duration: 0.5,
+          });
+        gsap.from(".gp", {
+            x: 100,
+            opacity: 0,
+            delay: 1.3,
+            duration: 0.5,
+          });
+    });
+  }
+  education();
+
+
+
 // toggle icon navbar
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
@@ -30,8 +77,4 @@ window.onscroll = () => {
     let header = document.querySelector("header");
 
     header.classList.toggle('sticky', window.scrollY > 100);
-
-    // remove toggle icon and navbar when click navbar link (scroll)
-    menuIcon.classList.remove('bx-x');
-    navbar.classList.remove('active');
 }
